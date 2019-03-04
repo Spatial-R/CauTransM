@@ -27,7 +27,7 @@ create_model_basic <- function(case.file.name = case.data,
   rmeas    <- create_measure(measure.name = report.name)[[2]]
   
   model.param <- c("R0","mu","sigma","gamma","alpha","iota",
-                      "rho","sigmaSE","psi","cohort","amplitude",
+                      "rho","sigmaSE","psi","amplitude",
                       "S_0","E_0","I_0","R_0")
   
   total.parameters <- c(model.param,focal.param)

@@ -1,17 +1,13 @@
-                      double beta, br, seas, foi,dw, births;
-                      double rate[7], trans[7];
-                      
-                      // cohort effect 240th is the school admission day
-                      if (fabs(t-floor(t)-240.0/365.0) < 0.5*dt)
-                      br = cohort*birthrate/dt + (1-cohort)*birthrate;
-                      else
-                      br = (1.0-cohort)*birthrate;
-                      
-                      // term-time seasonality
-                      t = (t-floor(t))*365.25;
-                      // wuyi: 5.1-5.3; shiyi: 10.1-10.7;summer:7.1-8.31;yuandan:1.1
-                      if ( (t>=90&&t<=121) || (t>=274&&t<=304) || (t>=4&&t<40) || (t>=124 && t<212) || (t>= 314 && t<365))
-                      seas = 1.0+amplitude*0.34/0.66;
-                      else
-                      seas = 1.0-amplitude;
+double beta, br, seas, foi,dw, births;
+double rate[7], trans[7];
+
+  br = birthrate;
+
+// term-time seasonality
+t = (t-floor(t))*365.25;
+// wuyi: 5.1-5.3; shiyi: 10.1-10.7;summer:7.1-8.31;yuandan:1.1
+if ( (t>=90&&t<=121) || (t>=274&&t<=304) || (t>=4&&t<40) || (t>=124 && t<212) || (t>= 314 && t<365))
+  seas = 1.0+amplitude*0.34/0.66;
+else
+  seas = 1.0-amplitude;
 

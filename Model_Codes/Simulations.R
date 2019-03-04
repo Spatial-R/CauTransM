@@ -34,9 +34,9 @@ mumps.hz <-  origin.data[,c(week.num,case.num)]; covar <- origin.data[,-c(case.n
 
 
 theta.lo <- c(mu = 5.92/1000,sigma=365/25,gamma=365/10,alpha = 3.115105e-01,iota = 5.952648e+00,rho = 0.2,
-              R0 = 3,sigmaSE = 0,psi = 0.1,cohort = 0,amplitude = 0, S_0 = 0.02,I_0 = 2e-06, E_0 = 2e-06)
+              R0 = 3,sigmaSE = 0,psi = 0.1,amplitude = 0, S_0 = 0.02,I_0 = 2e-06, E_0 = 2e-06)
 theta.hi <- c(mu = 5.92/1000,sigma=365/12,gamma=365/4,alpha = 1,iota = 40,rho = 0.7,R0 = 10,
-              sigmaSE = 1,psi = 0.4,cohort = 1,amplitude = 1, S_0 = 0.03,I_0 = 0.0001,E_0 = 0.0001)
+              sigmaSE = 1,psi = 0.4,amplitude = 1, S_0 = 0.03,I_0 = 0.0001,E_0 = 0.0001)
 guess.parameter <- cbind(theta.lo,theta.hi)
 
 
