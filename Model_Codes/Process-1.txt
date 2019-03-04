@@ -2,10 +2,7 @@
                       double rate[7], trans[7];
                       
                       // cohort effect 240th is the school admission day
-                      if (fabs(t-floor(t)-240.0/365.0) < 0.5*dt)
-                      br = cohort*birthrate/dt + (1-cohort)*birthrate;
-                      else
-                      br = (1.0-cohort)*birthrate;
+                      br = birthrate;
                       
                       // term-time seasonality
                       t = (t-floor(t))*365.25;
